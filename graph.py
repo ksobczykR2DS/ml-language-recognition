@@ -53,11 +53,13 @@ class Graph:
         if not self.check_if_valid_key_type(vertex):
             raise ValueError(f"Podana wartość nie może byc kluczem grafu.")
         elif vertex in self.graph:
-            return self.graph[vertex]
+            neighbours = self.graph[vertex]
+            print(f"Sąsiadami podanego wierzchołką {vertex} są {neighbours}.")
+            return neighbours
         else:
             raise ValueError(f"Podany wierzchołek nie należy do grafu.")
 
-    def print_graph(self):
+    def print_graph(self) -> None:
         for vertex in self.graph:
             print(f"{vertex}: {self.graph[vertex]}")
 
@@ -69,7 +71,7 @@ class GraphIterator:
 def main():
     graph = Graph()
 
-    graph.add_vertex(['aasva', 'asdsada'])
+    graph.add_vertex('A')
     graph.add_vertex('B')
     graph.add_vertex('C')
     graph.add_vertex('D')
@@ -82,6 +84,7 @@ def main():
     print("Graf po dodaniu wierzchołków i krawędzi:")
     graph.print_graph()
 
+    graph.show_neighbours('A')
     graph.remove_vertex('B')
     graph.remove_edge('A', 'C')
     print("Graf po usunięciu wierzchołka 'B' oraz krawędzi między 'A' a 'C':")
