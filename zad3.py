@@ -18,7 +18,7 @@ class ConllContextManager:
             if not line.isspace():
                 parts = [element.strip('"') for element in line.strip().split('\t')]
                 words = [word.strip('"') for word in parts[0].split(' ')]
-                return tuple(words + parts[1:])
+                return tuple(words)
         raise StopIteration
 
 
