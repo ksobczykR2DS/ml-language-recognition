@@ -14,15 +14,18 @@ def count_ngrams(file_path, n):
 
 
 def display_top_ngrams(counter, top_n):
-    top_ngrams = counter.most_common(top_n)
+    top_values = sorted(set(counter.values()), reverse=True)[:3]
 
-    print(f"Top {top_n} n-grams:")
-    for ngram, count in top_ngrams:
-        print(f"{ngram}: {count} occurrences")
+    for i, value in enumerate(top_values, start=1):
+        matching_items = [(key, count) for key, count in counter.items() if count == value]
+        print(f"\nPairs with value {value} (Place {i}):")
+        for key, count in matching_items:
+            print(f"{key}: {count} occurrences")
 
 
 def main():
     ngram_results = count_ngrams('szymborska.txt', 3)
+    print(ngram_results)
     display_top_ngrams(ngram_results, 3)
 
 
