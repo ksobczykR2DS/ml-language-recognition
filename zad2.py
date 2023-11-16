@@ -13,13 +13,17 @@ def count_ngrams(file_path, n):
         return ngram_counter
 
 
-def display_top_ngrams():
-    pass
+def display_top_ngrams(counter, top_n):
+    top_ngrams = counter.most_common(top_n)
+
+    print(f"Top {top_n} n-grams:")
+    for ngram, count in top_ngrams:
+        print(f"{ngram}: {count} occurrences")
 
 
 def main():
     ngram_results = count_ngrams('szymborska.txt', 3)
-    print(ngram_results)
+    display_top_ngrams(ngram_results, 3)
 
 
 if __name__ == '__main__':
