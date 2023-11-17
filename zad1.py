@@ -20,18 +20,13 @@ def count_words(file_path):
 
 
 def display_top_words(counter, top_words):
-    sorted_words = counter.most_common(top_words)
+    top_values = sorted(set(counter.values()), reverse=True)[:top_words]
 
-    print(f"Top {top_words} words: ")
-    for i, (word, count) in enumerate(sorted_words, start=1):
-        print(f"{i}. {word}: {count} occurrences")
-
-    # print(f"Top {top_words} words occurrences: ")
-    # for i, (word, count) in enumerate(sorted_words, start=1):
-    #     matching_items = [(word, count) for word, count in sorted_words if count == count]
-    #     print(f"Words with count {count} (Place {i}): ")
-    #     for word, count in matching_items:
-    #         print(f"{word}: {count} occurrences")
+    for i, value in enumerate(top_values, start=1):
+        matching_items = [(key, count) for key, count in counter.items() if count == value]
+        print(f"(Place {i}):")
+        for key, count in matching_items:
+            print(f"{key}: {count} occurrences")
 
 
 def main():
