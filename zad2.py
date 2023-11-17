@@ -13,8 +13,8 @@ def count_ngrams(file_path, n):
         return ngram_counter
 
 
-def display_top_ngrams(counter, top_n):
-    top_values = sorted(set(counter.values()), reverse=True)[:top_n]
+def display_top_ngrams(counter, top_ngrams):
+    top_values = sorted(set(counter.values()), reverse=True)[:top_ngrams]
 
     for i, value in enumerate(top_values, start=1):
         matching_items = [(key, count) for key, count in counter.items() if count == value]
