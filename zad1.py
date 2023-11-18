@@ -24,7 +24,7 @@ def display_top_words(counter, top_words):
 
     for i, value in enumerate(top_values, start=1):
         matching_items = [(key, count) for key, count in counter.items() if count == value]
-        print(f"(Place {i}):")
+        print(f"Place {i}:")
         for key, count in matching_items:
             print(f"{key}: {count} occurrences")
 
