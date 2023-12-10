@@ -10,7 +10,7 @@ class FileHandler:
     @staticmethod
     def save_credentials(login, password, file_name):
         try:
-            with open(file_name, 'r') as is_file:
+            with open(file_name, 'r', encoding='UTF-8') as is_file:
                 data = json.load(is_file)
         except FileNotFoundError:
             data = {}
@@ -25,7 +25,7 @@ class FileHandler:
     @staticmethod
     def load_credentials(file_name):
         try:
-            with open(file_name, 'r') as in_file:
+            with open(file_name, 'r', encoding='UTF-8') as in_file:
                 data = json.load(in_file)
                 return data
         except FileNotFoundError:
@@ -46,4 +46,5 @@ class FileHandler:
 
     @staticmethod
     def load_books_data():
-        pass
+        with open('security/book_data.json', "r", encoding='UTF-8') as file:
+            return json.load(file)

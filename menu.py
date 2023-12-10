@@ -18,7 +18,6 @@ class Menu:
         print("    [4.1] Wyszukaj po tytule")
         print("    [4.2] Wyszukaj po autorze")
         print("    [4.3] Wyszukaj po słowach kluczowych (np. fantasy, dramat, romans)")
-        print("[5] Wyloguj się.")
         print("==========================================================================")
 
     @staticmethod
@@ -29,5 +28,4 @@ class Menu:
         print("[3] Usuń książkę z systemu")
         print("[4] Dodaj czytelnika")
         print("[5] Przeglądaj katalog")
-        print("[6] Wyloguj się.")
         print("============================")
