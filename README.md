@@ -1,6 +1,7 @@
 # JiBAD2023
 Języki i Biblioteki Analizy Danych
 
+# Polecenie
 Napisać system obsługi biblioteki:
 System ma być obsługiwany przez konsolę; gdzie się da, należy użyć menu
 System powinien umożliwiać zalogowanie się (jako czytelnik lub bibliotekarz)
@@ -27,7 +28,7 @@ a. Wypożycz książkę
 b. Zarezerwuj książkę (jeśli jest wypożyczona)
 c. Przedłuż wypożyczenie
 d. Przeglądaj katalogi. Wyszukaj po tytuleii. Wyszukaj po autorzeiii. Wyszukaj po słowach kluczowych
-e. Wyloguj się. -> powrót do głównego menu.
+e. Wyloguj się. -> powrót do głównego okna
 
 OKNO [2]: Alternatywa
 Menu główne dla Bibliotekarza:
@@ -36,7 +37,7 @@ b. Dodaj nową książkę
 c. Usuń książkę z systemu
 d. Dodaj czytelnika
 e. Przeglądaj katalog
-f. Wyloguj się.
+f. Wyloguj się. -> powrót to głównego okna
 
 LOGIN: (Każda grupa użytkowników (czytelnicy, bibliotekarze) ma swoje unikalne dane logowania (np. unikalny
 identyfikator lub nazwa użytkownika).

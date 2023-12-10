@@ -18,7 +18,10 @@ class LibrarySystem:
 
     def _login_to_account(self):
         print("\nLogowanie.")
-        login = input("Podaj login: ")
+        login = input("Podaj login (lub wpisz 'end' aby wrócić do menu głównego): ")
+
+        if login.lower() == 'end':
+            return  # Wróć do menu głównego
         password = input("Podaj hasło: ")
 
         user_data = Fh.load_credentials(Fh.USER_DATA)
@@ -39,8 +42,11 @@ class LibrarySystem:
 
         if account_type == "1":
             while True:
-                login = input("Podaj login: ")
-                if Fh.check_login_availability(login, Fh.USER_DATA or Fh.EMPLOYEE_DATA):
+                login = input("Podaj login (lub wpisz 'end' aby wrócić do menu głównego): ")
+
+                if login.lower() == 'end':
+                    return  # Wróć do menu głównego
+                elif Fh.check_login_availability(login, Fh.USER_DATA or Fh.EMPLOYEE_DATA):
                     break
                 else:
                     print("Podany login już istnieje. Proszę podać inny login.")
@@ -53,8 +59,11 @@ class LibrarySystem:
             if verification_code == self.EMPLOYEE_VERIFICATION_CODE:
                 print("Kod weryfikacyjny jest poprawny.")
                 while True:
-                    login = input("Podaj login: ")
-                    if Fh.check_login_availability(login, Fh.EMPLOYEE_DATA or Fh.EMPLOYEE_DATA):
+                    login = input("Podaj login (lub wpisz 'end' aby wrócić do menu głównego): ")
+
+                    if login.lower() == 'end':
+                        return  # Wróć do menu głównego
+                    elif Fh.check_login_availability(login, Fh.EMPLOYEE_DATA or Fh.EMPLOYEE_DATA):
                         break
                     else:
                         print("Podany login już istnieje. Proszę podać inny login.")
