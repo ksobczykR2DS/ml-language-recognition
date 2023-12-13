@@ -42,7 +42,12 @@ class FileHandler:
 
     @staticmethod
     def save_books_data(books_data):
-        pass
+        try:
+            with open('security/book_data.json', 'w', encoding='UTF-8') as out_file:
+                json.dump(books_data, out_file, indent=2)
+            print("Zapisano dane książek do pliku.")
+        except Exception as e:
+            print(f"Wystąpił błąd podczas zapisywania danych książek: {e}")
 
     @staticmethod
     def load_books_data():
