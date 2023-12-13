@@ -17,7 +17,7 @@ class Menu:
         print("[4] Przeglądaj katalogi:")
         print("    [4.1] Wyszukaj po tytule")
         print("    [4.2] Wyszukaj po autorze")
-        print("    [4.3] Wyszukaj po słowach kluczowych (np. fantasy, dramat, romans)")
+        print("    [4.3] Wyszukaj po słowach kluczowych (np. fantasy, adventure, romance)")
         print("==========================================================================")
 
     @staticmethod
