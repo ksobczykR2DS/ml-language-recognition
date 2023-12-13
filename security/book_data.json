@@ -1,0 +1,74 @@
+{
+  "books": [
+    {
+      "title": "1984",
+      "author": "George Orwell",
+      "borrow_status": false,
+      "borrow_date": null,
+      "return_date": null,
+      "borrowed_by": null,
+      "reserved_by": null,
+      "keywords": [
+        "dystopia",
+        "totalitarianism",
+        "politics"
+      ]
+    },
+    {
+      "title": "One Hundred Years of Solitude",
+      "author": "Gabriel Garcia Marquez",
+      "borrow_status": false,
+      "borrow_date": null,
+      "return_date": null,
+      "borrowed_by": null,
+      "reserved_by": null,
+      "keywords": [
+        "magic",
+        "magical realism",
+        "Colombia"
+      ]
+    },
+    {
+      "title": "The Master and Margarita",
+      "author": "Mikhail Bulgakov",
+      "borrow_status": false,
+      "borrow_date": null,
+      "return_date": null,
+      "borrowed_by": null,
+      "reserved_by": null,
+      "keywords": [
+        "satire",
+        "fantasy",
+        "Moscow"
+      ]
+    },
+    {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "borrow_status": false,
+      "borrow_date": null,
+      "return_date": null,
+      "borrowed_by": null,
+      "reserved_by": null,
+      "keywords": [
+        "America",
+        "1920s",
+        "romance"
+      ]
+    },
+    {
+      "title": "The Little Prince",
+      "author": "Antoine de Saint-Exupery",
+      "borrow_status": false,
+      "borrow_date": null,
+      "return_date": null,
+      "borrowed_by": null,
+      "reserved_by": null,
+      "keywords": [
+        "philosophy",
+        "adventure",
+        "childhood"
+      ]
+    }
+  ]
+}
