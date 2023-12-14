@@ -1,7 +1,7 @@
 # JiBAD2023
 Języki i Biblioteki Analizy Danych
 
-# 'Pod koniec pisania systemu zdałem sobie sprawę, że nie dodanie ID do książek było tragiczną decyzją. Tak więc, w tej bibliotece istnieje tylko po jednym egzemplarzu danej książki'
+# 'Pod koniec pisania systemu zdałem sobie sprawę, że nie dodanie ID do książek było tragiczną decyzją. Tak więc, w tej bibliotece istnieje tylko po jednym egzemplarzu danej książki (it's not a bug, it's a feature)
 
 bo gdyby było ich więcej to nie dało by się sprawdzić, która książka jest zwracana etc.
 
