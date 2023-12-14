@@ -73,10 +73,10 @@
     {
       "title": "ja",
       "author": "ty",
-      "borrow_status": false,
-      "borrow_date": null,
-      "return_date": null,
-      "borrowed_by": null,
+      "borrow_status": true,
+      "borrow_date": "2023-12-14",
+      "return_date": "2024-01-04",
+      "borrowed_by": "user1",
       "reserved_by": null,
       "keywords": [
         "ja",
