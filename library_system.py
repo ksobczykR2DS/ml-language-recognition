@@ -1,3 +1,4 @@
+from employee_options import EmployeeInterface as Ei
 from filehandler import FileHandler as Fh
 from menu import Menu
 from security import cipher
@@ -7,8 +8,6 @@ from user_options import UserInterface as Ui
 class LibrarySystem:
     # z załozenia ten kod bedzie podawany tylko pracownikowi, aby ten mógł założyć konto
     EMPLOYEE_VERIFICATION_CODE = "123"
-
-    # zmienna do przechowywania aktualnego loginu uzytkownika
 
     def __init__(self):
         self._is_running = True
@@ -38,8 +37,10 @@ class LibrarySystem:
             user_interface.run()
         elif login in employee_data and self.cipher.hash_data(password) == employee_data[login]:
             print("Logowanie jako pracownik udane.")
-            # Ue.current_user_login = login
+            employee_interface = Ei()
             # tu kod dla zalogowanego pracownika
+            Ei.current_user_login = login
+            employee_interface.run()
         else:
             print("Nieprawidłowy login lub hasło. Powrót do menu.")
 
