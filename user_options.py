@@ -33,7 +33,7 @@ class UserInterface:
             else:
                 print("Nieprawidłowe polecenie. Spróbuj ponownie.")
 
-    def borrow_book(self):
+    def borrow_book(self) -> None:
         book_title = input("Wprowadź tytuł książki do wypożyczenia: ")
         books = Fh.load_books_data()["books"]
 
@@ -53,7 +53,7 @@ class UserInterface:
 
         print(f"Książka o tytule '{book_title}' nie została znaleziona.")
 
-    def reserve_book(self):
+    def reserve_book(self) -> None:
         book_title = input("Wprowadź tytuł książki do zarezerwowania: ")
         books = Fh.load_books_data()["books"]
 
@@ -72,7 +72,7 @@ class UserInterface:
 
         print(f"Książka o tytule '{book_title}' nie została znaleziona.")
 
-    def extend_loan(self):
+    def extend_loan(self) -> None:
         books = Fh.load_books_data()["books"]
         borrowed_books = [book for book in books if
                           book["borrowed_by"] == self.current_user_login and book["borrow_status"]]
@@ -96,7 +96,7 @@ class UserInterface:
         print(f"Przedłużono wypożyczenie książki '{selected_book['title']}' do {selected_book['return_date']}.")
 
     @staticmethod
-    def display_found_books(found_books):
+    def display_found_books(found_books) -> None:
         if not found_books:
             print("Brak pasujących książek.")
         else:
@@ -108,18 +108,18 @@ class UserInterface:
                 print(f"Autor: {found_book['author']}")
                 print(f"Status wypożyczenia: {'Wypożyczona' if found_book['borrow_status'] else 'Dostępna'}")
 
-    def show_all_books(self):
+    def show_all_books(self) -> None:
         self.display_found_books(Fh.load_books_data()["books"])
 
-    def search_by_title(self, title):
+    def search_by_title(self, title) -> None:
         found_books = [book for book in Fh.load_books_data()["books"] if book["title"].lower() == title.lower()]
         self.display_found_books(found_books)
 
-    def search_by_author(self, author):
+    def search_by_author(self, author) -> None:
         found_books = [book for book in Fh.load_books_data()["books"] if book["author"].lower() == author.lower()]
         self.display_found_books(found_books)
 
-    def search_by_keywords(self, book_keywords):
+    def search_by_keywords(self, book_keywords) -> None:
         found_books = [book for book in Fh.load_books_data()["books"] if
                        all(keyword.lower() in (kw.lower() for kw in book["keywords"]) for keyword in book_keywords)]
         self.display_found_books(found_books)

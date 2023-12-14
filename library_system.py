@@ -18,7 +18,7 @@ class LibrarySystem:
         }
         self.cipher = cipher.Cipher()
 
-    def _login_to_account(self):
+    def _login_to_account(self) -> None:
         print("\nLogowanie.")
         login = input("Podaj login (lub wpisz 'end' aby wrócić do menu głównego): ")
 
@@ -44,7 +44,7 @@ class LibrarySystem:
         else:
             print("Nieprawidłowy login lub hasło. Powrót do menu.")
 
-    def _register_account(self):
+    def _register_account(self) -> None:
         print("\nRejestracja nowego konta:")
         account_type = input("Wybierz rodzaj konta (\"1\" - Użytkownik, \"2\" - Bibliotekarz): ")
 

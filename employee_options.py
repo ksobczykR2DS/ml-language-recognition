@@ -29,13 +29,31 @@ class EmployeeInterface:
                 print("Nieprawidłowe polecenie. Spróbuj ponownie.")
 
     def accept_return(self):
-        # Implementacja funkcji przyjmowania zwrotu książki
-        pass
+        title = input("Podaj tytuł książki, która jest zwracana: ")
+
+        books_data = Fh.load_books_data()
+        book_found = False
+
+        for book in books_data["books"]:
+            if book["title"].lower() == title.lower() and book['borrow_status']:
+                book["borrow_status"] = False
+                book["borrow_date"] = None
+                book["return_date"] = None
+                book["borrowed_by"] = None
+                book["reserved_by"] = None
+                book_found = True
+                break
+
+        if book_found:
+            Fh.save_books_data(books_data)
+            print(f"Pomyślnie przyjęto zwrot książki '{title}'.")
+        else:
+            print("Nie znaleziono książki lub książka nie jest wypożyczona.")
 
     def add_new_book(self):
         title = input("Podaj tytuł książki: ")
         author = input("Podaj autora książki: ")
-        keywords = input("Podaj słowa kluczowe (oddzielone przecinkiem): ").split(',')
+        keywords = input("Podaj słowa kluczowe (oddzielone przecinkiem): ").split(",")
 
         new_book = {
             "title": title,
@@ -48,8 +66,8 @@ class EmployeeInterface:
             "keywords": keywords
         }
 
-        books_data = Fh.load_books_data()["books"]
-        books_data.append(new_book)
+        books_data = Fh.load_books_data()
+        books_data["books"].append(new_book)
         Fh.save_books_data(books_data)
         print(f"Dodano książkę '{title}' do katalogu.")
 
@@ -57,7 +75,7 @@ class EmployeeInterface:
         title_to_remove = input("Podaj tytuł książki do usunięcia: ")
 
         books_data = Fh.load_books_data()["books"]
-        books_data = [book for book in books_data if book['title'] != title_to_remove]
+        books_data = [book for book in books_data if book["title"] != title_to_remove]
 
         Fh.save_books_data({"books": books_data})
         print(f"Usunięto książkę '{title_to_remove}' z katalogu.")

@@ -69,6 +69,19 @@
         "adventure",
         "childhood"
       ]
+    },
+    {
+      "title": "ja",
+      "author": "ty",
+      "borrow_status": false,
+      "borrow_date": null,
+      "return_date": null,
+      "borrowed_by": null,
+      "reserved_by": null,
+      "keywords": [
+        "ja",
+        "ty"
+      ]
     }
   ]
 }
