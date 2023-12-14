@@ -22,9 +22,6 @@ class EmployeeInterface:
                 self.add_reader()
             elif user_instruction == "5":
                 self.browse_catalog()
-            elif user_instruction == "6":
-                self.logout()
-                break
             else:
                 print("Nieprawidłowe polecenie. Spróbuj ponownie.")
 
@@ -100,7 +97,3 @@ class EmployeeInterface:
 
     def browse_catalog(self):
         Ui.display_found_books(Fh.load_books_data()["books"])
-
-    @staticmethod
-    def logout():
-        print("Wylogowano pracownika.")
