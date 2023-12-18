@@ -1,50 +1,17 @@
 # JiBAD2023
 Języki i Biblioteki Analizy Danych
 
-# Polecenie
-Napisać system obsługi biblioteki:
-System ma być obsługiwany przez konsolę; gdzie się da, należy użyć menu
-System powinien umożliwiać zalogowanie się (jako czytelnik lub bibliotekarz)
-Czytelnik może wypożyczyć książkę, zarezerwować książkę, która jest wypożyczona, przedłużyć wypożyczenie, przeglądać
-katalog (wyszukiwanie po tytule, autorze lub słowach kluczowych)
-Bibliotekarz może przyjąć zwrot książki, dodać nową książkę, usunąć książkę z systemu, dodać czytelnika oraz przeglądać
-katalog
-System powinien przechowywać swoje dane na dysku (proszę przemyśleć organizację) - zmiany dokonane podczas jednego
-uruchomienia programu mają być widoczne w drugim
+# Implementacja KNN przy użyciu Numpy
+Zadanie domowe:
 
-SYSTEM OBSŁUGI BIBLIOTEKIOKNO 1:
-[1] OPCJA LOGOWANIA DO KONTA: UŻYTKOWNIK LUB BIBLIOTEKARZ
-[2] OPCJA NOWEGO KONTA: UŻYTKOWNIK LUB BIBLIOTEKARZ
-[3] WYJŚCIE
+Zaimplementować algorytm klasyfikacji binarnej kNN (k najbliższych sąsiadów).
+Należy udostępnić metody train i predict.
+Train buduje bazę przypadków uczących (przyjmuje przynajmniej wektory i prawidłowe odpowiedzi). Wielokrotne wywołanie metody train powinno rozszerzać zbiór przypadków uczących.
+Metoda predict przyjmuje wektor (opcjonalnie: większą liczbę wektorów naraz) i zwraca odpowiedź klasyfikatora.
+Należy umożliwić wybór jednej z czterech funkcji odległości: euklidesowej, taksówkowej, maksimum i cosinusowej.
 
-OKNO [1]:
-Login:
-Password:
-Exit:
+Porównać wyniki na podanych zbiorach dla przynajmniej 3 wartości k (ostatnia kolumna zawiera etykietę).
 
-OKNO [2]:
-Menu główne dla Czytelnika:
-a. Wypożycz książkę
-b. Zarezerwuj książkę (jeśli jest wypożyczona)
-c. Przedłuż wypożyczenie
-d. Przeglądaj katalogi. Wyszukaj po tytuleii. Wyszukaj po autorzeiii. Wyszukaj po słowach kluczowych
-e. Wyloguj się. -> powrót do głównego okna
+Pomocna może być metoda np.array.partition.
 
-OKNO [2]: Alternatywa
-Menu główne dla Bibliotekarza:
-a. Przyjmij zwrot książki
-b. Dodaj nową książkę
-c. Usuń książkę z systemu
-d. Dodaj czytelnika
-e. Przeglądaj katalog
-f. Wyloguj się. -> powrót to głównego okna
-
-LOGIN: (Każda grupa użytkowników (czytelnicy, bibliotekarze) ma swoje unikalne dane logowania (np. unikalny
-identyfikator lub nazwa użytkownika).
-Po zalogowaniu się system rozpoznaje, czy użytkownik jest czytelnikiem czy bibliotekarzem i udziela odpowiednich
-uprawnień.
-
-ZAPIS PLIKI JSON (szyfrowanie poprzez hashowanie)
-Plik 1 -> użytkownicy (hasło, login, ID?)
-Plik 2 -> bibliotekarze (hasło, login, ID?)
-Plik 3 -> wypożycznia (login, tytuł ksiażki, data, ilość dni)
+Termin: 05.01.2024 08:00
