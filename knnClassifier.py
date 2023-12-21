@@ -1,4 +1,3 @@
-import pandas as pd
 import numpy as np
 
 
@@ -6,7 +5,7 @@ class KNNClassifier:
     def __init__(self, k, distance):
         self.k = k
         self.distance = distance
-        
+
     # def compute_distance(self, x):
     #     if self.distance == "euclidean":
     #         return np.sqrt(np.sum())
@@ -17,6 +16,12 @@ class KNNClassifier:
     #     elif self.distance == "cosinus":
     #         print(4)
 
+    def train(self, x_train, y_train):
+        pass
+
+    def predict(self):
+        pass
+    
     @staticmethod
     def load_csv(filepath):
         data = np.loadtxt(filepath, delimiter=' ')
@@ -61,11 +66,11 @@ class KNNClassifier:
 
 
 def main():
-    k, distance = get_user_input()
-    classifier = KNNClassifier(k=k, distance=distance)
+    k, distance = KNNClassifier.get_user_input()
 
-    df = KNNClassifier.load_csv("data/dataset1.csv")
-    print(df)
+    x, y = KNNClassifier.load_csv("data/dataset1.csv")
+    classifier = KNNClassifier(k=k, distance=distance)
+    classifier.train(x, y)
 
 
 if __name__ == "__main__":
